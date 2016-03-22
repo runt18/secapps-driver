@@ -48,7 +48,7 @@ else:
 display.start()
 
 if args.display_backend == 'vnc':
-	os.system('/usr/bin/fluxbox -display :%s &' % display.display)
+	os.system('/usr/bin/fluxbox -display :{0!s} &'.format(display.display))
 	
 # ---
 # ---
@@ -78,7 +78,7 @@ mimes = [
 	'text/json'
 ]
 
-mimes += ['data:%s' % mime for mime in mimes]
+mimes += ['data:{0!s}'.format(mime) for mime in mimes]
 
 # ---
 # ---
